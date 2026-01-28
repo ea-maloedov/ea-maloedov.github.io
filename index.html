@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>GREEN API</title>
+    <link rel="stylesheet" href="./master.css">
+</head>
+<body>
+
+<div class="app-container">
+    <main class="main-window">
+        <aside class="sidebar">
+            <header class="sidebar-header">
+                <h1>GREEN API</h1>
+                <span class="status-dot"></span>
+            </header>
+
+            <div class="scroll-content">
+                <section class="group">
+                    <label>Настройки инстанса</label>
+                    <label for="idInstance"></label><input type="text" id="idInstance" placeholder="idInstance">
+                    <label for="apiToken"></label><input type="text" id="apiToken" placeholder="apiTokenInstance">
+                    <div class="button-row">
+                        <button class="btn-outline" onclick="callGetSettings(event)">Get Settings</button>
+                        <button class="btn-outline" onclick="callGetStateInstance(event)">Get State</button>
+                    </div>
+                </section>
+
+                <section class="group">
+                    <label>Отправка сообщения</label>
+                    <label for="phoneMessage"></label><input type="tel" id="phoneMessage" placeholder="79123456789">
+                    <label for="textMessage"></label><textarea id="textMessage" placeholder="Текст сообщения" rows="3"></textarea>
+                    <button class="btn-primary" onclick="callSendMessage(event)">Отправить текст</button>
+                </section>
+
+                <section class="group">
+                    <label>Отправка файла по URL</label>
+                    <label for="phoneFile"></label><input type="tel" id="phoneFile" placeholder="79123456789">
+                    <label for="urlFile"></label><input type="text" id="urlFile" placeholder="https://example.com/file.jpg">
+                    <label for="fileName"></label><input type="text" id="fileName" placeholder="file.jpg">
+                    <label for="caption"></label><input type="text" id="caption" placeholder="Подпись файла">
+                    <button class="btn-primary" onclick="callSendFileByUrl(event)">Отправить файл</button>
+                </section>
+            </div>
+        </aside>
+
+        <section class="content">
+            <div class="content-header">
+                <h2>Response Terminal</h2>
+            </div>
+            <div class="terminal-wrapper">
+                <pre id="responseArea" class="terminal-content">Ожидание запроса...</pre>
+            </div>
+        </section>
+    </main>
+
+</div>
+
+<script src="./index.js"></script>
+</body>
+</html>
