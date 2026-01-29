@@ -178,11 +178,10 @@ button {
 ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
 
 
-/* Стили лоадера */
 .btn-loading {
     position: relative;
-    color: transparent !important; /* Прячем текст при загрузке */
-    pointer-events: none; /* Запрещаем повторные клики */
+    color: transparent !important;
+    pointer-events: none;
 }
 
 .btn-loading::after {
